@@ -7,12 +7,12 @@ body {
 
 /* 画面共通 */
 .screen {
-  display: none;
+  display: block;
   padding: 24px;
 }
 
-.screen.active {
-  display: block;
+.screen.hidden {
+  display: none;
 }
 
 .hidden {
