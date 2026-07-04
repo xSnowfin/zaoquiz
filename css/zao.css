@@ -1,18 +1,22 @@
 body {
   margin: 0;
-  font-family: "Arial", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-family: Arial, sans-serif;
   background: linear-gradient(180deg, #e6f7ff, #ffffff);
-  color: #333;
+  overflow-x: hidden;
 }
 
 /* 画面共通 */
 .screen {
-  display: block;
-  padding: 24px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s ease;
+  pointer-events: none;
 }
 
-.screen.hidden {
-  display: none;
+.screen.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .hidden {
@@ -26,27 +30,37 @@ body {
 }
 
 #title-screen h1 {
-  font-size: 28px;
+  font-size: 32px;
   color: #0077cc;
-  line-height: 1.5;
+  letter-spacing: 2px;
+  animation: floatTitle 2s ease-in-out infinite;
+}
+
+@keyframes floatTitle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
 }
 
 /* ボタン */
 button {
-  background: #ffb84d;
+  background: linear-gradient(135deg, #ffb84d, #ff8c42);
   border: none;
-  padding: 12px 20px;
+  padding: 14px 24px;
   font-size: 16px;
-  border-radius: 12px;
-  color: #fff;
+  border-radius: 14px;
+  color: white;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 4px 0 #d98c1f;
-  transition: 0.1s;
+  box-shadow: 0 6px 0 #d98c1f;
+  transition: all 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
 }
 
 button:active {
-  transform: translateY(2px);
+  transform: translateY(3px);
   box-shadow: 0 2px 0 #d98c1f;
 }
 
@@ -79,8 +93,13 @@ button:active {
   font-size: 16px;
   color: #2b8a3e;
   font-weight: bold;
+  animation: popIn 0.3s ease;
 }
 
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
 /* 入力欄 */
 #input-area {
   margin-top: 12px;
