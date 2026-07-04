@@ -22,7 +22,7 @@ const UI = {
 
   this.gameScreen.classList.remove("hidden");
   this.gameScreen.classList.add("active");
-  }
+  },
   // ステージ描画
   renderStage(stage) {
     this.clearMessage();
