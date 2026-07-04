@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  font-family: "Arial", "Hiragino Kaku Gothic ProN", sans-serif;
+  background: linear-gradient(180deg, #e6f7ff, #ffffff);
+  color: #333;
+}
+
+/* 画面共通 */
+.screen {
+  display: none;
+  padding: 24px;
+}
+
+.screen.active {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+/* タイトル */
+#title-screen {
+  text-align: center;
+  margin-top: 20vh;
+}
+
+#title-screen h1 {
+  font-size: 28px;
+  color: #0077cc;
+  line-height: 1.5;
+}
+
+/* ボタン */
+button {
+  background: #ffb84d;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #d98c1f;
+  transition: 0.1s;
+}
+
+button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #d98c1f;
+}
+
+/* ステージ情報 */
+#stage-info {
+  font-size: 20px;
+  font-weight: bold;
+  color: #0077cc;
+  margin-bottom: 12px;
+}
+
+/* コンテンツカード */
+#content-area {
+  margin-top: 20px;
+}
+
+.ar-box,
+.minigame-box,
+.question {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* メッセージ */
+#message {
+  margin-top: 16px;
+  font-size: 16px;
+  color: #2b8a3e;
+  font-weight: bold;
+}
+
+/* 入力欄 */
+#input-area {
+  margin-top: 12px;
+}
+
+input {
+  width: 80%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #ffb84d;
+}
