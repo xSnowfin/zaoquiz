@@ -13,25 +13,35 @@ const UI = {
     this.submitBtn = document.getElementById("submit-btn");
 
     this.startBtn = document.getElementById("start-btn");
+
+    // スタートイベント（重要）
+    this.startBtn.onclick = () => {
+      this.showGameScreen();
+      Game.init();
+    };
   },
 
   // タイトル → ゲーム画面
   showGameScreen() {
-  this.titleScreen.classList.remove("active");
-  this.titleScreen.classList.add("hidden");
-
-  this.gameScreen.classList.remove("hidden");
-  this.gameScreen.classList.add("active");
+    this.titleScreen.classList.add("hidden");
+    this.gameScreen.classList.remove("hidden");
   },
+
   // ステージ描画
   renderStage(stage) {
+    if (!stage) return;
+
     this.clearMessage();
-    this.stageInfo.innerText = stage.title;
+    this.stageInfo.innerText = stage.title || "";
 
     this.contentArea.innerHTML = "";
 
+    // 入力エリア制御
     if (stage.type === "quiz") {
+      this.inputArea.classList.remove("hidden");
       this.renderQuiz(stage);
+    } else {
+      this.inputArea.classList.add("hidden");
     }
 
     if (stage.type === "ar") {
@@ -51,8 +61,6 @@ const UI = {
 
     this.contentArea.appendChild(q);
 
-    this.inputArea.classList.remove("hidden");
-
     this.submitBtn.onclick = () => {
       const value = this.answerInput.value;
       Game.checkAnswer(value);
@@ -62,8 +70,6 @@ const UI = {
 
   // AR表示
   renderAR(stage) {
-    this.inputArea.classList.add("hidden");
-
     const box = document.createElement("div");
     box.className = "ar-box";
 
@@ -71,7 +77,7 @@ const UI = {
     text.innerText = stage.message;
 
     const hint = document.createElement("p");
-    hint.innerText = "ヒント：" + stage.hint;
+    hint.innerText = "ヒント：" + (stage.hint || "");
 
     const btn = document.createElement("button");
     btn.innerText = "ARをスキャンした（仮）";
@@ -88,10 +94,8 @@ const UI = {
     this.contentArea.appendChild(box);
   },
 
-  // ミニゲーム（仮表示）
+  // ミニゲーム表示
   renderMiniGame(stage) {
-    this.inputArea.classList.add("hidden");
-
     const box = document.createElement("div");
     box.className = "minigame-box";
 
