@@ -17,10 +17,12 @@ const UI = {
 
   // タイトル → ゲーム画面
   showGameScreen() {
-    this.titleScreen.classList.add("hidden");
-    this.gameScreen.classList.remove("hidden");
-  },
+  this.titleScreen.classList.remove("active");
+  this.titleScreen.classList.add("hidden");
 
+  this.gameScreen.classList.remove("hidden");
+  this.gameScreen.classList.add("active");
+  }
   // ステージ描画
   renderStage(stage) {
     this.clearMessage();
