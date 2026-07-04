@@ -72,7 +72,7 @@
 
         <p>
 
-        📱 ARを確認して次の場所へ向かおう！
+        <a href="https://webar.styly.cc/v2/ar_contents/8d39edb5ac1f3ea5" target="_blank">📱 ARを見る</a>
 
         </p>
 
