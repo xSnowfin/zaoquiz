@@ -7,16 +7,8 @@ body {
 
 /* 画面共通 */
 .screen {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.4s ease;
-  pointer-events: none;
-}
-
-.screen.hidden {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
+  display: block;
+  padding: 24px;
 }
 
 .hidden {
