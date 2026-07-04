@@ -13,7 +13,7 @@ body {
   pointer-events: none;
 }
 
-.screen.active {
+.screen.hidden {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
