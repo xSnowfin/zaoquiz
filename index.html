@@ -1,53 +1,74 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>蔵王ジャンプ台AR謎解き</title>
-  <link rel="stylesheet" href="css/zao.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>蔵王ジャンプ台AR謎解き</title>
+
+    <link rel="stylesheet" href="css/zao.css">
 </head>
 <body>
 
-  <div id="app">
+    <!-- タイトル画面 -->
+    <section id="title-screen" class="screen">
+        <div class="title-card">
+            <h1>🏔️ 蔵王ジャンプ台<br>AR謎解きゲーム</h1>
 
-    <!-- タイトル -->
-    <section id="title-screen" class="screen active">
-      <h1>蔵王ジャンプ台<br>AR謎解きゲーム</h1>
-      <button id="start-btn">スタート</button>
+            <p class="subtitle">
+                ジャンプ台に隠された謎を解き明かそう！
+            </p>
+
+            <button id="start-btn">
+                ▶ スタート
+            </button>
+        </div>
     </section>
 
     <!-- ゲーム画面 -->
     <section id="game-screen" class="screen hidden">
 
-      <!-- ステージ表示 -->
-      <div id="stage-info"></div>
+        <header class="game-header">
 
-      <!-- 問題エリア -->
-      <div id="content-area"></div>
+            <div id="stage-info">
+                Stage 1
+            </div>
 
-      <!-- 入力 -->
-      <div id="input-area">
-        <input type="text" id="answer-input" placeholder="答えを入力">
-        <button id="submit-btn">送信</button>
-      </div>
+            <div class="progress-bar">
+                <div id="progress-fill"></div>
+            </div>
 
-      <!-- メッセージ -->
-      <div id="message"></div>
+        </header>
+
+        <main>
+
+            <div id="content-area">
+            </div>
+
+            <div id="input-area">
+
+                <input
+                    id="answer-input"
+                    type="text"
+                    placeholder="答えを入力">
+
+                <button id="submit-btn">
+                    回答する
+                </button>
+
+            </div>
+
+            <div id="message"></div>
+
+        </main>
 
     </section>
 
-  </div>
-
-  <!-- JS -->
-  <script src="js/config.js"></script>
-  <script src="js/storage.js"></script>
-  <script src="js/ui.js"></script>
-  <script src="js/quiz.js"></script>
-  <script src="js/game.js"></script>
-  <script src="js/main.js"></script>
-  <script>
-    console.log("JS読み込みOK");
-  </script>
+    <script src="js/config.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 </html>
